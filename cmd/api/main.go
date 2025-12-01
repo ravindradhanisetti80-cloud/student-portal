@@ -11,10 +11,10 @@ import (
 	"syscall"
 	"time"
 
+	"student-portal/internal/commons/logger"
 	"student-portal/internal/config"
 	"student-portal/internal/handler"
 	kafka "student-portal/internal/kafka"
-	"student-portal/internal/logger"
 	"student-portal/internal/repository"
 	"student-portal/internal/routes"
 	"student-portal/internal/service"

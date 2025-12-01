@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
+	"student-portal/internal/commons/constants" // Assuming you created this in Step 1C
+	"student-portal/internal/commons/logger"
 	"student-portal/internal/config"
-	"student-portal/internal/constants" // Assuming you created this in Step 1C
-	"student-portal/internal/logger"
 
 	"github.com/segmentio/kafka-go"
 	"go.uber.org/zap"

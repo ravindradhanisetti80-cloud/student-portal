@@ -5,9 +5,10 @@ import (
 	"errors"
 	"time"
 
-	"github.com/golang-jwt/jwt/v5"
+	appErrors "student-portal/internal/commons/errors"
 	"student-portal/internal/config"
-	appErrors "student-portal/internal/errors"
+
+	"github.com/golang-jwt/jwt/v5"
 )
 
 // UserClaims defines the claims structure for the JWT.

@@ -5,8 +5,9 @@ import (
 	"net/http"
 	"time"
 
+	"student-portal/internal/commons/logger"
+
 	"go.uber.org/zap"
-	"student-portal/internal/logger"
 )
 
 // Logger is a simple structure to hold the response status.

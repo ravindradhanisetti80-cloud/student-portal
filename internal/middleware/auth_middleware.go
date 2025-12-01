@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"strings"
 
+	"student-portal/internal/commons/constants"
+	appErrors "student-portal/internal/commons/errors"
+	"student-portal/internal/commons/logger"
 	"student-portal/internal/config"
-	"student-portal/internal/constants"
-	appErrors "student-portal/internal/errors"
-	"student-portal/internal/logger"
 	"student-portal/internal/utils"
 )
 

@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strconv"
 
+	appErrors "student-portal/internal/commons/errors"
 	"student-portal/internal/config"
-	appErrors "student-portal/internal/errors"
 	"student-portal/internal/middleware"
 	"student-portal/internal/models"
 	"student-portal/internal/service"

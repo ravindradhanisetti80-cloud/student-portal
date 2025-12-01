@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"net/http"
 
+	appErrors "student-portal/internal/commons/errors"
 	"student-portal/internal/config"
-	appErrors "student-portal/internal/errors"
 	"student-portal/internal/models"
 	"student-portal/internal/service"
 	"student-portal/internal/utils"

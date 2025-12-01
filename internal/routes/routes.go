@@ -1,8 +1,8 @@
 package routes
 
 import (
+	"student-portal/internal/commons/enums"
 	"student-portal/internal/config"
-	"student-portal/internal/enums"
 	"student-portal/internal/handler"
 
 	appMiddleware "student-portal/internal/middleware"

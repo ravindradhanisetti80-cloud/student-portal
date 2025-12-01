@@ -5,11 +5,12 @@ import (
 	"context"
 	"errors"
 
+	appErrors "student-portal/internal/commons/errors"
+	"student-portal/internal/models"
+
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgconn"
 	"github.com/jackc/pgx/v5/pgxpool"
-	appErrors "student-portal/internal/errors"
-	"student-portal/internal/models"
 )
 
 // UserRepository defines the methods for interacting with the users data store.

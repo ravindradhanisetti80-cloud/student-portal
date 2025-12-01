@@ -3,7 +3,7 @@ package utils
 import (
 	"encoding/json"
 	"net/http"
-	"student-portal/internal/errors"
+	"student-portal/internal/commons/errors"
 )
 
 type Response struct {

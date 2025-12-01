@@ -3,10 +3,10 @@ package service
 import (
 	"context"
 	// Needed for Login event timestamp
+	appErrors "student-portal/internal/commons/errors"
+	"student-portal/internal/commons/logger" // Imported for structured logging
 	"student-portal/internal/config"
-	appErrors "student-portal/internal/errors"
 	kafka "student-portal/internal/kafka"
-	"student-portal/internal/logger" // Imported for structured logging
 	"student-portal/internal/models"
 	"student-portal/internal/repository"
 	"student-portal/internal/utils"

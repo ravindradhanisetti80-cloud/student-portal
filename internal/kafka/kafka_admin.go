@@ -5,8 +5,8 @@ import (
 	"context"
 	"time"
 
-	"student-portal/internal/constants"
-	"student-portal/internal/logger"
+	"student-portal/internal/commons/constants"
+	"student-portal/internal/commons/logger"
 
 	"github.com/segmentio/kafka-go"
 	"go.uber.org/zap"

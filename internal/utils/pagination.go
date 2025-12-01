@@ -4,7 +4,7 @@ package utils
 import (
 	"net/http"
 	"strconv"
-	"student-portal/internal/constants"
+	"student-portal/internal/commons/constants"
 )
 
 // PaginationQuery holds the parsed page and limit values from the request.
