@@ -35,7 +35,7 @@ func LoadConfig() *Config {
 		log.Printf("Warning: No .env file found: %v", err)
 	}
 
-	// --- JWT Expiry Parsing ---
+	//JWT Expiry Parsing
 	jwtExpiryStr := getEnv("JWT_EXPIRY", "24h") // Get value or default to "24h"
 	expiryDuration, err := time.ParseDuration(jwtExpiryStr)
 	if err != nil {

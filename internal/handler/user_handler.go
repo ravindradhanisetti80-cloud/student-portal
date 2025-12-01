@@ -67,7 +67,7 @@ func (h *UserHandler) UpdateOwnProfile(w http.ResponseWriter, r *http.Request) {
 	utils.SendJSON(w, http.StatusOK, userResp)
 }
 
-// ListUsers retrieves all users (Admin Only).
+// ListUsers from all users (Admin Only).
 func (h *UserHandler) ListUsers(w http.ResponseWriter, r *http.Request) {
 	query := utils.NewPaginationQuery(r)
 
@@ -81,7 +81,7 @@ func (h *UserHandler) ListUsers(w http.ResponseWriter, r *http.Request) {
 	utils.SendJSON(w, http.StatusOK, resp)
 }
 
-// GetUserByID retrieves a user by ID (Admin Only).
+// GetUserByID from user by ID (Admin Only).
 func (h *UserHandler) GetUserByID(w http.ResponseWriter, r *http.Request) {
 	idStr := chi.URLParam(r, "id")
 	id, err := strconv.ParseInt(idStr, 10, 64)

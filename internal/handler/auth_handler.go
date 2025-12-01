@@ -25,8 +25,8 @@ func NewAuthHandler(svc service.UserService, cfg *config.Config) *AuthHandler {
 
 // Routes sets up the public routes for authentication.
 
-// @Failure 500 {object} errors.AppError
-// @Router /auth/register [post]
+// Failure 500 {object} errors.AppError
+// Router /auth/register [post]
 func (h *AuthHandler) Register(w http.ResponseWriter, r *http.Request) {
 	var req models.RegisterRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
@@ -45,7 +45,7 @@ func (h *AuthHandler) Register(w http.ResponseWriter, r *http.Request) {
 	utils.SendJSON(w, http.StatusCreated, userResp)
 }
 
-// @Router /auth/login [post]
+// Router /auth/login [post]
 func (h *AuthHandler) Login(w http.ResponseWriter, r *http.Request) {
 	var req models.LoginRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {

@@ -5,6 +5,7 @@ import (
 	// Needed for Login event timestamp
 	"student-portal/internal/config"
 	appErrors "student-portal/internal/errors"
+	kafka "student-portal/internal/kafka"
 	"student-portal/internal/logger" // Imported for structured logging
 	"student-portal/internal/models"
 	"student-portal/internal/repository"
@@ -27,11 +28,11 @@ type UserService interface {
 type userService struct {
 	repo  repository.UserRepository
 	cfg   *config.Config
-	kafka *utils.KafkaProducer
+	kafka *kafka.KafkaProducer
 }
 
 // NewUserService creates a new UserService instance.
-func NewUserService(repo repository.UserRepository, cfg *config.Config, kafka *utils.KafkaProducer) UserService {
+func NewUserService(repo repository.UserRepository, cfg *config.Config, kafka *kafka.KafkaProducer) UserService {
 	return &userService{repo: repo, cfg: cfg, kafka: kafka}
 }
 

@@ -13,11 +13,11 @@ import (
 
 	"student-portal/internal/config"
 	"student-portal/internal/handler"
+	kafka "student-portal/internal/kafka"
 	"student-portal/internal/logger"
 	"student-portal/internal/repository"
 	"student-portal/internal/routes"
 	"student-portal/internal/service"
-	"student-portal/internal/utils" // Contains Kafka utilities
 
 	"github.com/jackc/pgx/v5/pgxpool"
 	"go.uber.org/zap" // For structured error logging
@@ -51,16 +51,16 @@ func main() {
 	brokerList := strings.Split(cfg.KafkaBrokers, ",")
 
 	// 4a. Check Broker Reachability & Create Topics (Health Check)
-	if err := utils.CreateTopics(brokerList); err != nil {
+	if err := kafka.CreateTopics(brokerList); err != nil {
 		logger.Logger.Fatal(fmt.Sprintf("Failed to connect to Kafka or create topics: %v", err))
 	}
 
 	// 4b. Initialize Kafka Producer
-	kafkaProducer := utils.NewKafkaProducer(brokerList)
+	kafkaProducer := kafka.NewKafkaProducer(brokerList)
 	defer kafkaProducer.Close()
 
 	// 4c. Start Kafka Consumer (Pass the shutdown context)
-	kafkaConsumerReader := utils.StartConsumer(ctx, cfg)
+	kafkaConsumerReader := kafka.StartConsumer(ctx, cfg)
 	defer func() {
 		// Ensure the consumer reader is closed during shutdown
 		if err := kafkaConsumerReader.Close(); err != nil {
